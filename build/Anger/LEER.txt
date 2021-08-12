@@ -1,0 +1,11 @@
+Pasos a seguir,
+
+1- Se copia a esta carpeta el archivo de salida de Geant de Monde2 llamado "monde2_out.root"
+
+2- Despues se prosigue extraerle los datos al .root para un .txt mediante $ root readroot.C , este genera un archivo de saida llamado "anger_in.txt" que seria el archivo de entrada para el calculo con el algoritmo Anger
+
+3- Se procede a calcular con el algoritmo Anger mediante $ g++ Anger.C y despues ejecutar $./a.out y se hace el calculo y se genera un archivo de salida "anger_out.txt" que estaria listo para graficar
+
+4- Para graficar el archivo utilizamos el macro plotAnger_root.C $ root plotAnger_root.C que hace el plot deseado y genera un archivo .root con el mismo nombre.
+
+
