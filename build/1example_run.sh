@@ -3,7 +3,7 @@
 start_time=$(date +%s)
 echo " Run monde Simulation"
 
-./exampleB1 run3jav.mac -> z.out
+./exampleB1 run3jav.mac -> run3jav.out
 
 echo " --Finished--"
 finish_time=$(date +%s)

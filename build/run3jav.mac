@@ -12,5 +12,5 @@
 # netrones  
 /gun/particle neutron
 /gun/energy 10 keV
-/run/beamOn 2
+/run/beamOn 10000
 

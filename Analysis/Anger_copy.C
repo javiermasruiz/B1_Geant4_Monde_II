@@ -12,10 +12,11 @@ using namespace std;
 // Global variables
 ofstream out;
 ifstream in;
-double x, y, X, Y, X0, Y0, dX, dY;
+double X=0.0, Y=0.0, X0, Y0, dX, dY;
 long pmt_sum, threshold = 50, fail_pmt, good_PMT;
 long pmt1, pmt2, pmt3, pmt4, pmt5, pmt6, pmt7, pmt8, pmt9, pmt10, pmt11, pmt12, pmt13, pmt14, pmt15, pmt16;
 long PMT1, PMT2, PMT3, PMT4, PMT5, PMT6, PMT7, PMT8, PMT9, PMT10, PMT11, PMT12, PMT13, PMT14, PMT15, PMT16;
+
 double x1pos = 30.895, x2pos = 26.191, x3pos = 17.500, x4pos = 6.145, x5pos = -6.145;
 double x6pos = -17.500, x7pos = -26.191, x8pos = -30.891, x9pos = -30.895, x10pos = -26.191;
 double x11pos = -17.500, x12pos = -6.145, x13pos = 6.145, x14pos = 17.500, x15pos = 26.191, x16pos = 30.895;
@@ -29,7 +30,7 @@ double y11pos = -26.191, y12pos = -30.895, y13pos = -30.895, y14pos = -26.191, y
 
 int main(){
 
-	in.open("anger_in.txt", ios::in);
+	in.open("aN17dic.txt", ios::in);
 	out.open("anger_out.txt", ios::out);
 
 	if(in.fail()){
@@ -50,13 +51,11 @@ int main(){
  int entries = 0;
  while (in.good()) 
    {  
-        in >> x >> y >> pmt1 >> pmt2 >> pmt3 >> pmt4 >> pmt5
+        in >> pmt1 >> pmt2 >> pmt3 >> pmt4 >> pmt5
 		   >> pmt6 >> pmt7 >> pmt8 >> pmt9 >> pmt10
 		   >> pmt11 >> pmt12 >> pmt13 >> pmt14 >> pmt15 >> pmt16;
 
-		X = x;
-		Y = y;
-		PMT1 = pmt1;
+		PMT1 = pmt1; 
 		PMT2 = pmt2;
 		PMT3 = pmt3;
 		PMT4 = pmt4;
@@ -160,19 +159,19 @@ int main(){
 	    }
 
 	      if(in.good()){
-       	/*
+       	
        	   cout <<fixed<<showpoint<<setprecision(2)<< X << " " << Y << " " << X0 << " " << Y0 << " " <<  dX  << " " <<  dY;
 		   cout << " " << PMT1 << " " << PMT2 << " " << PMT3 << " " << PMT4 << " " << PMT5 << " " << PMT6 << " " << PMT7; 
 		   cout << " " << PMT8 << " " << PMT9 << " " << PMT10 << " " << PMT11 << " " << PMT12 << " " << PMT13 << " " << PMT14;
 		   cout << " " << PMT15 << " " << PMT16 << "  " << pmt_sum << endl;
-	    */
+	    
 	   	   out <<fixed<<showpoint<<setprecision(2)<< X << " " << Y << " " << X0 << " " << Y0 << " " <<  dX  << " " <<  dY;
 		   out << " " << PMT1 << " " << PMT2 << " " << PMT3 << " " << PMT4 << " " << PMT5 << " " << PMT6 << " " << PMT7; 
 		   out << " " << PMT8 << " " << PMT9 << " " << PMT10 << " " << PMT11 << " " << PMT12 << " " << PMT13 << " " << PMT14;
 		   out << " " << PMT15 << " " << PMT16 << "  " << pmt_sum << endl;
 
       	  entries++;
-      	  cout << entries << " -- " << good_PMT  << endl;
+      	 // cout << entries << " -- " << good_PMT  << endl;
         }
 
 
